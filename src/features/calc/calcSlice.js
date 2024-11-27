@@ -9,7 +9,6 @@ const initialState = {
 const calcSlice = createSlice({
   name: "calc",
   initialState,
-  reducers,
 });
 
 export default calcSlice.reducer;

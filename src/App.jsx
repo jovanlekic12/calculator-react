@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useSelector, useDispatch } from "react-redux";
+import Screen from "./components/Screen";
+import "./App.css";
 
 function App() {
-
+  // const dispatch = useDispatch();
+  // const { firstNumber, secondNumber, operation } = useSelector(
+  //   (store) => store.calc
+  // );
 
   return (
-    <>
-
-    </>
-  )
+    <main className="main__container">
+      <Screen></Screen>
+    </main>
+  );
 }
 
-export default App
+export default App;
