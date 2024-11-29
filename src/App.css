@@ -46,6 +46,8 @@ body {
 }
 
 .delete__btn__div button {
+  text-transform: uppercase;
+  font-weight: 800;
   background-color: #008097;
   color: #fff;
   border: none;

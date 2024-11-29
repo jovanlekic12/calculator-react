@@ -1,6 +1,9 @@
 import Button from "./reusable components/Button";
+import { useSelector, useDispatch } from "react-redux";
 
 function Buttonss() {
+  const dispatch = useDispatch();
+
   return (
     <div className="num__btn__div">
       <Button>7</Button>
