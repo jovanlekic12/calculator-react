@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  firstNumber: "mjau",
-  secondNumber: "mjau",
+  firstNumber: "",
+  secondNumber: "",
   operation: "",
 };
 
@@ -37,6 +37,7 @@ const calcSlice = createSlice({
       }
     },
     calculate: (state, action) => {
+      if (!state.secondNumber) return;
       switch (state.operation) {
         case "/":
           state.secondNumber = parseFloat(

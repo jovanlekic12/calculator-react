@@ -9,7 +9,9 @@ function Buttonss() {
       <Button onClick={() => dispatch(addNumber(7))}>7</Button>
       <Button onClick={() => dispatch(addNumber(8))}>8</Button>
       <Button onClick={() => dispatch(addNumber(9))}>9</Button>
-      <Button onClick={() => dispatch(addOperation("/"))}>/</Button>
+      <Button onClick={() => dispatch(addOperation("/"), calculate("/"))}>
+        /
+      </Button>
       <Button onClick={() => dispatch(addNumber(4))}>4</Button>
       <Button onClick={() => dispatch(addNumber(5))}>5</Button>
       <Button onClick={() => dispatch(addNumber(6))}>6</Button>
