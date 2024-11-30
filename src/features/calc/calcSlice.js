@@ -37,30 +37,36 @@ const calcSlice = createSlice({
       }
     },
     calculate: (state, action) => {
-      if (!state.secondNumber) return;
-      switch (state.operation) {
-        case "/":
-          state.secondNumber = parseFloat(
-            Number(state.secondNumber) / Number(state.firstNumber)
-          );
-          break;
-        case "*":
-          state.secondNumber = parseFloat(
-            Number(state.secondNumber) * Number(state.firstNumber)
-          );
-          break;
-        case "+":
-          state.secondNumber = parseFloat(
-            Number(state.secondNumber) + Number(state.firstNumber)
-          );
-          break;
-        case "-":
-          state.secondNumber = parseFloat(
-            Number(state.secondNumber) - Number(state.firstNumber)
-          );
+      if (!state.secondNumber) {
+        // // state.operation = action.payload;
+        // state.secondNumber = state.firstNumber;
+        // state.firstNumber = "";
+        return;
+      } else if (state.operation) {
+        switch (state.operation) {
+          case "/":
+            state.secondNumber = parseFloat(
+              Number(state.secondNumber) / Number(state.firstNumber)
+            );
+            break;
+          case "*":
+            state.secondNumber = parseFloat(
+              Number(state.secondNumber) * Number(state.firstNumber)
+            );
+            break;
+          case "+":
+            state.secondNumber = parseFloat(
+              Number(state.secondNumber) + Number(state.firstNumber)
+            );
+            break;
+          case "-":
+            state.secondNumber = parseFloat(
+              Number(state.secondNumber) - Number(state.firstNumber)
+            );
+        }
+        state.firstNumber = "";
+        state.operation = action.payload;
       }
-      state.firstNumber = "";
-      state.operation = action.payload;
     },
   },
 });
