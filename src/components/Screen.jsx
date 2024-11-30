@@ -8,7 +8,10 @@ function Screen() {
 
   return (
     <div className="screen__container">
-      <h1>{secondNumber}</h1>
+      <h1>
+        {operation}
+        {secondNumber}
+      </h1>
       <h1>{firstNumber}</h1>
     </div>
   );

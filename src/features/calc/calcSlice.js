@@ -14,9 +14,28 @@ const calcSlice = createSlice({
       state.firstNumber = "";
       state.secondNumber = "";
     },
+    deleteNumber: (state) => {
+      state.firstNumber = state.firstNumber.slice(0, -1);
+    },
+    addNumber: (state, action) => {
+      if (state.firstNumber.includes(".") && action.payload === ".") {
+        return;
+      } else {
+        state.firstNumber = state.firstNumber + action.payload;
+      }
+    },
+    addOperation: (state, action) => {
+      if (!state.secondNumber) {
+        state.secondNumber = state.firstNumber;
+        state.firstNumber = "";
+        state.operation = action.payload;
+      } else {
+      }
+    },
   },
 });
 
-export const { clearState } = calcSlice.actions;
+export const { clearState, deleteNumber, addNumber, addOperation } =
+  calcSlice.actions;
 
 export default calcSlice.reducer;
